@@ -35,7 +35,7 @@
     "build": "vite build",
     "server": "json-server --watch db.json --port 4000",
     "lint": "eslint .",
-    "test": "vitest run --reporter=@learn-co-curriculum/jest-learn-reporter --reporter=default",
+    "test": "jest",
     "preview": "vite preview"
   },
   "jest": {
