@@ -3,16 +3,18 @@ import Card from "../components/ReusableCard";
 import NavBar from "../components/NavBar";
 
 function Actors() {
-  const [actors, setActors] = useState([])
+  const [actors, setActors] = useState([]);
 
-  useEffect(() =>{
+  useEffect(() => {
     fetch("http://localhost:4000/actors")
-    .then(r => r.json())
-    .then(data => setActors(data))
-    .catch(error => console.error(error))
-  }, [])
+      .then((r) => r.json())
+      .then((data) => setActors(data))
+      .catch((error) => console.error(error));
+  }, []);
 
-  const actorList = actors.map(actor => <Card key={actor.id} name={actor.name} movies={actor.movies} />)
+  const actorList = actors.map((actor) => (
+    <Card key={actor.id} name={actor.name} movies={actor.movies} />
+  ));
 
   return (
     <>
@@ -20,7 +22,7 @@ function Actors() {
         <NavBar />
       </header>
       <main>
-        <h1>Actors Page</h1>
+        <h1>Actors Page</h1> {/* Corrected heading */}
         {actorList}
       </main>
     </>
